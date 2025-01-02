@@ -16,6 +16,7 @@ local ScoreCheck = RS:FindFirstChild("ScoreQuery") or Instance.new("RemoteEvent"
 ScoreCheck.Name = "ScoreQuery"
 local CurrentPublicKey = RS:FindFirstChild("PublicKey") or Instance.new("StringValue",RS)
 CurrentPublicKey.Value = tostring(math.floor(tick()))
+local CurrentlyActive = RS:FindFirstChild("GameInitialized") or Instance.new("BoolValue",RS)
 local CurrentVersion = RS.Version
 local Algorithm = require(RS.Algorithm)
 local KeyGenerator = require(SS.GenerateKeys)
@@ -126,3 +127,4 @@ ServerRemote.OnClientInvoke = PlayerCall
 
 PLR.PlayerRemoving:Connect(PlayerDisconnect)
 PLR.PlayerAdded:Connect(PlayerAdded)
+CurrentlyActive.Value = true
