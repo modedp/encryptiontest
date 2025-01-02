@@ -54,6 +54,6 @@ local Keys = tostring(LeaderboardKeys.public) .. "/" .. tostring(LeaderboardKeys
 local EncryptedKeysWithPublicKey = Modules.Algorithm(Keys,PublicKey)
 local TemporaryTick = nil
 local GameVersion = Meta.game.replicatedStorage.Version.Value
-local AttemptKey = "Game Version: Nice Try, There Is Nothing Here, Except You Exploiter."
+local AttemptKey = "Game Version: Nice Try."
 print(Meta.string.sub(AttemptKey,1,13),GameVersion)
 
